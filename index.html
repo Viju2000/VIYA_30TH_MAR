@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Viya ❤️</title>
+    <style>
+        body {
+            background-color: #1a1a1a; color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; margin: 0; overflow: hidden;
+            transition: background-color 1.5s ease;
+        }
+
+        #auth-container, #loader-container { text-align: center; padding: 20px; z-index: 10; }
+        input[type="date"] { padding: 12px; border-radius: 8px; border: none; margin-top: 15px; font-size: 1rem; color: #333; }
+        .btn-main { background-color: #ff4d4d; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; margin-top: 15px; font-weight: bold; }
+
+        .heart-icon { color: #ff4d4d; font-size: 60px; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+        
+        .progress-bar { width: 100%; height: 10px; background: #333; border-radius: 10px; overflow: hidden; margin: 25px 0; border: 1px solid #444; }
+        .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #ff4d4d, #ff8080); transition: width 0.4s linear; }
+
+        #music-btn {
+            display: none; position: fixed; top: 20px; right: 20px; z-index: 100;
+            background: #ff4d4d; color: white; width: 50px; height: 50px; 
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            cursor: pointer; font-size: 20px; animation: pulse 2s infinite;
+        }
+
+        #final-message {
+            display: none; padding: 35px; background: #fff; color: #333; border-radius: 20px;
+            max-width: 650px; margin: 20px; line-height: 1.8; box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            max-height: 85vh; overflow-y: auto; border-top: 12px solid #ff4d4d;
+            opacity: 0; transition: opacity 2.5s ease-in;
+        }
+
+        /* REMOVED BLACK BORDERS - IMAGES NOW FILL THE ENTIRE BOX */
+        .cover-photo-container { 
+            width: 100%; height: 380px; overflow: hidden; border-radius: 12px; 
+            margin-bottom: 25px; border: 4px solid #ffeded; display: flex; 
+            justify-content: center; align-items: center;
+        }
+        .cover-photo { width: 100%; height: 100%; object-fit: cover; } /* Changed to cover for full image */
+
+        .smile-gallery { display: flex; gap: 12px; justify-content: center; margin: 25px 0; flex-wrap: wrap; }
+        .smile-photo-container {
+            width: 46%; height: 180px; border-radius: 15px;
+            border: 3px solid #ffeded; display: flex; justify-content: center;
+            align-items: center; overflow: hidden;
+        }
+        .smile-photo { width: 100%; height: 100%; object-fit: cover; } /* Changed to cover for full image */
+        
+        h2 { color: #ff4d4d; text-align: center; font-family: 'Georgia', serif; }
+        .signature { text-align: right; font-weight: bold; margin-top: 30px; color: #ff4d4d; font-size: 1.3rem; }
+    </style>
+</head>
+<body>
+
+    <audio id="love-song" loop>
+        <source src="song.mp3#t=60" type="audio/mpeg">
+    </audio>
+
+    <div id="music-btn" onclick="toggleMusic()">🎵</div>
+
+    <div id="auth-container">
+        <div class="heart-icon">❤</div>
+        <h3>Unlock Your 2nd Anniversary Gift</h3>
+        <p style="color: #bbb; font-size: 0.9rem;">Enter Vijay's Birthday to proceed</p>
+        <input type="date" id="birthday-input">
+        <br>
+        <button class="btn-main" onclick="checkBirthday()">Unlock My Heart</button>
+    </div>
+
+    <div id="loader-container" style="display:none;">
+        <div class="heart-icon">❤</div>
+        <div id="status-text">Identifying Viya...</div>
+        <div class="progress-bar"><div id="fill" class="progress-fill"></div></div>
+        <p id="step-count">Phase 1 of 10</p>
+    </div>
+
+    <div id="final-message">
+        <div class="cover-photo-container">
+            <img src="couple.jpeg" alt="Us Together" class="cover-photo">
+        </div>
+
+        <h2>To My Dearest Viya,</h2>
+        
+        <div class="letter-body">
+            <p><strong>BHAVYA G SHET (VIYA),</strong></p>
+            <p>Two years ago, on 30th March 2024, I took the most beautiful step of my life and proposed to you. Today, as we celebrate our second anniversary, my heart is full of gratitude. We’ve faced so many ups and downs, and even though life has put this distance between us for now, I truly believe it happened to teach us how to trust and believe in one another more deeply.</p>
+            <p>Being away from you has only made my love stronger. I want you to know, with all my heart, that I have never once thought of cheating or hurting our bond. To me, loyalty isn't just a word—it’s the foundation of my love for you, and it will stay that way until my very last breath. My only wish is to see us both stand tall and successful in this society, and I am working hard every day to be the man who can fulfill every single one of your dreams.</p>
+            <p>I know we’ve had moments where things felt broken because of my attitude or self-respect. Please understand that these are parts of me I hold dear, and I only ask that you handle them with care so we can grow together without hurting each other. Everything else in our journey is so beautiful, and I want to keep it that way. I promise you, Viya, the moment I am back in Bangalore, I will definitely look into the engagement and then marriage.</p>
+            <p>Let’s keep our world private and happy—just you and me, with no room for a third person to ever come between us. With lots of love from your <strong>viijjjjiiiiilllluuuuu</strong>.</p>
+            <p>I know I used to say hurtful things when we fought, but those were only words spoken in the heat of the moment. They aren't the truth. The truth is, I am so incredibly happy to have you. Because of you, I am trying to live happily and I have the mindset to give you a good life.</p>
+            
+            <p style="text-align: center; font-weight: bold; margin-top: 20px; font-size: 1.2rem; color: #ff4d4d;">I love your smile, Viya.</p>
+
+            <div class="smile-gallery">
+                <div class="smile-photo-container"><img src="smile1.jpeg" class="smile-photo"></div>
+                <div class="smile-photo-container"><img src="smile2.jpg" class="smile-photo"></div>
+            </div>
+
+            <p style="text-align: center;">Love You Forever till my last breath or till you leave me. 😊</p>
+        </div>
+        
+        <div class="signature">— With All My Love, VIJAY NAGARAJ SHET</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        const MY_BIRTHDAY = "2000-09-20"; 
+
+        const steps = [
+            "Access Granted. Identifying Bhavya G Shet...",
+            "Loading 30th March 2024 memories...",
+            "Recalling the day I proposed...",
+            "Calculating 730 days of love and growth...",
+            "Loyalty Check: [STATUS: UNBREAKABLE]",
+            "Filtering out third-party interference...",
+            "Optimizing Bangalore Return Route...",
+            "Preparing Engagement Protocols...",
+            "Finalizing the promise for the future...",
+            "3... 2... 1... ❤️"
+        ];
+
+        function checkBirthday() {
+            const input = document.getElementById('birthday-input').value;
+            if (input === MY_BIRTHDAY) {
+                document.getElementById('auth-container').style.display = 'none';
+                document.getElementById('loader-container').style.display = 'block';
+                startLoading();
+            } else {
+                alert("Incorrect date! 😊");
+            }
+        }
+
+        let currentStep = 0;
+        function startLoading() {
+            if (currentStep < steps.length) {
+                document.getElementById('status-text').innerText = steps[currentStep];
+                document.getElementById('fill').style.width = ((currentStep + 1) / steps.length) * 100 + "%";
+                document.getElementById('step-count').innerText = `Phase ${currentStep + 1} of 10`;
+                currentStep++;
+                setTimeout(startLoading, 2500); 
+            } else {
+                revealLetter();
+            }
+        }
+
+        function revealLetter() {
+            document.getElementById('loader-container').style.display = 'none';
+            document.body.style.backgroundColor = '#fff0f0'; 
+            
+            const musicBtn = document.getElementById('music-btn');
+            musicBtn.style.display = 'flex';
+            
+            const song = document.getElementById('love-song');
+            song.currentTime = 60; 
+            song.play().catch(e => console.log("Music blocked until user clicks button."));
+
+            const finalLetter = document.getElementById('final-message');
+            finalLetter.style.display = 'block';
+            setTimeout(() => { finalLetter.style.opacity = '1'; }, 100);
+
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+        }
+
+        function toggleMusic() {
+            const song = document.getElementById('love-song');
+            song.paused ? song.play() : song.pause();
+        }
+    </script>
+</body>
+</html>
